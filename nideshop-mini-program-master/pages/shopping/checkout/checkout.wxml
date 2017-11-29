@@ -1,0 +1,33 @@
+<view class="container">
+    <view class="order-box">
+        <view class="order-item">
+            <view class="l">
+                <text class="name">商品合计</text>
+            </view>
+            <view class="r">
+                <text class="txt">￥{{actualPrice}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="goods-items">
+        <view class="item" wx:for="{{checkedCourseList}}" wx:key="{{item.id}}">
+            <view class="img">
+                <image src="{{item.img}}"></image>
+            </view>
+            <view class="info">
+                <view class="t">
+                    <text class="name">{{item.course_name}}</text>
+                    <!-- <text class="number">x{{item.number}}</text> -->
+                </view>
+                <!-- <view class="m">{{item.goods_specifition_name_value}}</view> -->
+                <view class="b">￥{{item.freeprice}}</view>
+            </view>
+        </view>
+    </view>
+
+    <view class="order-total">
+        <view class="l">实付：￥{{actualPrice}}</view>
+        <view class="r" bindtap="submitOrder">付款</view>
+    </view>
+</view>

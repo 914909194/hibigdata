@@ -1,0 +1,33 @@
+<view class="container">
+<view class='course-collect'>
+    <view class='collect-title'>
+      <text>课程收藏</text>
+    </view>
+    <view class="collect-list">
+      <view class="item" bindtap="openCourse"  bindtouchstart="touchStart" bindtouchend="touchEnd" wx:for="{{CourseCollectList}}" wx:key="{{item.id}}" data-index="{{index}}" data-type='course'>
+        <image class="img" src="{{item.list_img}}"></image>
+        <view class="info">
+          <view class="name">{{item.title}}</view>
+           <view class="target">{{item.target}}</view> 
+          <view class="price">￥{{item.freeprice}}</view>
+        </view>  
+      </view>
+    </view>
+</view>
+ <view class='information-collect'>
+    <view class='collect-title'>
+        <text>资讯收藏</text>
+    </view>
+    <view class="collect-list">
+    <view class="item" bindtap="openCourse"  bindtouchstart="touchStart" bindtouchend="touchEnd" wx:for="{{infoCollectList}}" wx:key="{{item.id}}" data-index="{{index}}" data-type='info'>
+      <image class="img" src="{{item.item_pic_url}}"></image>
+      <view class="info">
+        <view class="name">{{item.title}}</view>
+        <view class="subtitle">{{item.subtitle}}</view>
+        <!-- <view class="price">￥{{item.freeprice}}</view> -->
+      </view>  
+    </view>
+  </view>
+</view> 
+<view class='no-more' wx:if='{{CourseCollectList.length===0}}'>暂时没有收藏数据....</view>
+</view>

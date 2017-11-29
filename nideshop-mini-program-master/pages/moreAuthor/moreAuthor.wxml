@@ -1,0 +1,16 @@
+<view class="container">
+  <view class='author-content'>
+        <navigator url="../authorDetail/authorDetail?authorid={{item.id}}"  class="item" wx:for="{{AuthorList}}" wx:for-item="item" >
+          <view class='author-list'>
+            <view class='author-img'>
+              <image src='{{item.img}}'></image>
+            </view>
+            <view class='author-des'>
+                <text class='author-name'>{{item.name}}</text>
+                <text class='article-num'>文章：12篇</text>
+                <text class='article-hits'>流量：247次</text>
+            </view>
+          </view>
+        </navigator>
+    </view>
+</view>

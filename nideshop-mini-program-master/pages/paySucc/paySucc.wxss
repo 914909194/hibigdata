@@ -1,0 +1,9 @@
+.box{
+   width:600rpx;
+   height:300rpx;
+   background:#40A6FD;
+   text-align:center;
+   font-size: 35rpx;
+   color:#fff;
+   margin:200rpx auto 0;
+}

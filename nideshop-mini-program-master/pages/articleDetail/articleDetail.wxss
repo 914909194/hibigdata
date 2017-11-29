@@ -1,0 +1,107 @@
+@import "../../lib/wxParse/wxParse.wxss";
+page{
+    background: #f4f4f4;
+    min-height: 100%;
+}
+
+.container{
+    background: #f4f4f4;
+    min-height: 100%;
+}
+.article-img image{
+  width:100%;
+}
+.article-title{
+  width:100%;
+  /* height:80rpx; */
+  padding: 10rpx;
+  font-weight: bold;
+}
+/* .article-title text{
+  line-height: 80rpx;
+} */
+.article-detail{
+  padding: 10rpx;
+  color: #ccc;
+}
+.title{
+  display: block;
+}
+.author{
+  
+}
+.pubtime{
+  display: block; 
+  color:#666;
+  font-size: 20rpx;
+  margin-top: 15rpx;
+}
+/*发表评论  */
+.comment-title{
+  padding:15rpx;
+  font-size: 30rpx;
+  background-color: #fff;
+  margin-top: 100rpx;
+}
+.coment-box{
+  margin-top: 30rpx;
+  background-color: #fff;
+}
+.pub-comment{
+  width:80%;
+  margin-left: 30rpx;
+}
+.comment-content{
+ border:1rpx solid #b4282d;
+ border-radius: 10rpx;
+}
+.pub-btn{
+  font-size: 23rpx;
+  color:#fff;
+  background-color: #b4282d;
+  width:100rpx;
+  height:52rpx;
+  margin-top: 10rpx;
+  float: left;
+}
+.comment-list{
+  display: flex;
+  background-color: #fff;
+  margin:15rpx 0;
+  padding:10rpx 15rpx 10rpx 15rpx;
+}
+.comment-img{
+  flex:1;
+  height:115rpx;
+  width:115rpx;
+}
+.comment-img image{
+  width:100%;
+  height:100%;
+  border-radius: 50%;
+  
+}
+.content-detail{
+  flex:5;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+}
+.addtime{
+  margin-top: 10rpx;
+  color:#999;
+}
+.content{
+  display: block;
+  margin-top: 15rpx;
+  color:#666;
+}
+.no-comment{
+  text-align: center;
+  color:#999;
+  font-size: 30rpx;
+  margin:35rpx 0;
+}
+
+
+
+
+

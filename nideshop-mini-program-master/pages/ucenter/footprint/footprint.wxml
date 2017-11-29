@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="footprint">
+    <view class="day-item" wx:for="{{footprintList}}" wx:key="{{index}}">
+      <view class="day-hd">{{item[0].add_time}}</view>
+      <view class="day-list">
+        <view class="item" data-footprint="{{iitem}}" data-courseid="{{iitem.course_id}}" bindtouchstart="touchStart" bindtouchend="touchEnd" bindtap="deleteItem" wx:for="{{item}}"  wx:for-item="iitem" wx:key="{{iitem.id}}">
+          <image class="img" src="{{iitem.list_img}}"></image>
+          <view class="info">
+            <view class="name">{{iitem.title}}</view>
+            <view class="subtitle">{{iitem.target}}</view>
+            <view class="price">￥{{iitem.freeprice}}</view>
+          </view> 
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

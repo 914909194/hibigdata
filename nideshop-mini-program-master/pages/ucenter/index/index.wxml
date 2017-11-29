@@ -1,0 +1,94 @@
+<view class="container">
+  <navigator url="/pages/ucenter/useredit/useredit" class="a">
+    <view class="profile-info">
+      <image class="avatar" src="{{userInfo.avatar}}"></image>
+      <view class="info">
+        <text class="name">{{userInfo.nickname}}</text>
+      </view> 
+    </view> 
+  </navigator>
+  <view class="user-menu">
+    <view class="item">
+      <navigator url="/pages/ucenter/myActOrder/myActOrder" class="a">
+        <text class="icon order"></text>
+        <text class="txt">我的活动</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/myCourseOrder/myCourseOrder" class="a">
+        <text class="icon coupon"></text>
+        <text class="txt">我的课程</text>
+      </navigator>
+    </view>
+    <view class="item no-border">
+      <navigator url="/pages/ucenter/course/course" class="a">
+        <text class="icon gift"></text>
+        <text class="txt">海贝卡</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/myOrder/myOrder" class="a">
+        <text class="icon order"></text>
+        <text class="txt">我的订单</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="/pages/ucenter/collect/collect" class="a">
+        <text class="icon address"></text>
+        <text class="txt">我的收藏</text>
+      </navigator>
+    </view>
+     <view class="item">
+      <navigator url="/pages/ucenter/footprint/footprint" class="a">
+        <text class="icon security"></text>
+        <text class="txt">我的足迹</text>
+      </navigator>
+    </view>
+    <!-- <view class="item">
+      <navigator url="url" class="a">
+        <text class="icon kefu"></text>
+        <text class="txt">会员福利</text>
+      </navigator>
+    </view>
+    <view class="item">
+      <navigator url="../address/address" class="a">
+        <text class="icon address"></text>
+        <text class="txt">地址管理</text>
+      </navigator>
+    </view> -->
+     <!-- <view class="item">
+      <navigator url="url" class="a">
+        <text class="icon security"></text>
+        <text class="txt">账号安全</text>
+      </navigator>
+    </view>  -->
+    <!-- <view class="item">
+      <navigator url="/pages/ucenter/myOrder/myOrder" class="a">
+        <text class="icon order"></text>
+        <text class="txt">课程订单</text>
+      </navigator>
+    </view> -->
+    <view class="item item-bottom">
+       <view class="a">
+             <text class="icon kefu"></text> 
+             <contact-button size='27' class='kefu-btn'></contact-button>  
+             <text class="txt">联系客服</text>   
+       </view>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="url" class="a">
+        <text class="icon coupon"></text>
+        <text class="txt">我的钱包</text>
+      </navigator>
+    </view>
+    <view class="item item-bottom">
+      <navigator url="/pages/ucenter/feedback/feedback" class="a">
+        <text class="icon feedback"></text>
+        <text class="txt">意见反馈</text>
+      </navigator>
+    </view>
+    
+  </view>
+   <view class="login" wx:if="{{!useronline}}" bindtap="goLogin">登录</view> 
+   <view class="logout" wx:if="{{useronline}}" bindtap="exitLogin">退出登录</view>
+</view>

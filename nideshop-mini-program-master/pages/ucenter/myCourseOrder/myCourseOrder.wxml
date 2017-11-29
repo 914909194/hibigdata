@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="orders">
+      <navigator 
+        url="../../course/course?courseid={{item[0].course_id}}&userid={{userid}}&paystatus=1" class="order" wx:for="{{orderList}}" wx:key="{{item.id}}" data-order-index="{{index}}">
+            <view class="goods" wx:for="{{item}}" wx:key="{{gitem.id}}" wx:for-item="gitem">
+                <view class="img">
+                    <image src="{{gitem.list_img}}"></image>
+                </view>
+                <view class="info">
+                    <text class="name">{{gitem.course_name}}</text>
+                </view>
+                <view class="status"></view>
+            </view>
+            <view class="b">
+                <view class="l">实付：￥{{item[0].freeprice}}</view>
+            </view>
+      </navigator>
+      <view class='noMore' wx:if="{{orderList.length==0}}">暂时没有数据....</view>
+    </view>
+</view>

@@ -1,0 +1,44 @@
+ <!-- <import src="../../lib/wxParse/wxParse.wxml"/> 
+    
+<view class="container">   
+    <template is="wxParse" data="{{wxParseData:article.nodes}}"/>
+</view>    -->
+<view class="container">
+   
+ <!-- 文章详情 -->
+  <view class='article-img'>
+    <image src='{{articleDetail.img}}'></image>
+  </view>
+  <view class='article-content'>
+    <view class='article-title'>
+      <text class='title'>{{articleDetail.title}}</text>
+      <!-- <text class='author'></text> -->
+      <text class='pubtime'>作者：{{articleDetail.author}}      发表于：{{articleDetail.pubtime}}</text>
+    </view> 
+    <view class='article-detail'>
+      <text>{{articleDetail.description}}</text>
+    </view>
+  </view>
+  <view class='comment-title'>
+    <text>文章评论</text>
+  </view>
+  <view class='comment-box'>
+         <view class='no-comment'  wx:if='{{commenList.length==0}}'>
+            <text>暂时没有评论</text>
+        </view>
+        <view class='comment-list' wx:for="{{commenList}}" wx:for-item="item">
+            <view class='comment-img'>
+              <image src='{{item.user_info.avatar}}'></image>
+            </view>
+            <view class='content-detail'>
+                <text class='addtime'>{{item.add_time}}</text>
+                <text class='content'>{{item.content}}</text>
+            </view>
+        </view>
+        <view class='pub-comment'>
+          <input class='comment-content' value="{{inputvalue}}" bindinput ="comment" placeholder='请输入评论内容'></input>
+          <button bindtap="pubComment" class='pub-btn'>发表</button> 
+        </view>
+      </view>
+      
+</view>

@@ -1,0 +1,58 @@
+<view class="container">
+      <view class='actOrder' bindtap='actOrderTap'>
+        <text>我的活动订单</text>
+      </view>
+      <view class="orders" wx:if="{{activityFlag}}">
+          <navigator 
+          url="../orderDetail/orderDetail?activityapplyid={{item.id}}&userid={{userInfo.id}}" class="order" wx:for="{{orderList}}" wx:key="{{item.id}}" data-order-index="{{index}}">
+              <view class="h">
+                  <view class="l">订单编号：{{item.order_sn}}</view>
+                  <view class="r">{{item.order_status_text}}</view>
+              </view>
+              <view class="goods" wx:for="{{item.activityList}}" wx:key="{{gitem.id}}" wx:for-item="gitem">
+                  <view class="img">
+                      <image src="{{gitem.list_img}}"></image>
+                  </view>
+                  <view class="info">
+                      <text class="name">{{gitem.activity_name}}</text>
+                  </view>
+                  
+              </view>
+              <view class="b">
+                  <view class="l">实付：￥{{item.actual_price}}</view>
+                  <view class="r">
+                  <button class="btn" data-cancellorder="{{item.id}}" catchtap="cancellOrder" wx:if="{{item.handleOption.pay}}">取消订单</button>
+                      <button class="btn" data-id="{{item.activityList[0].activity_id}}" catchtap="payOrder" wx:if="{{item.handleOption.pay}}">去付款</button>
+                  </view>
+              </view>
+          </navigator>
+      </view> 
+    <view class='couOrder'  bindtap='couOrderTap'>
+      <text>我的课程订单</text>
+    </view>
+    <view class="orders" wx:if="{{courseFlag}}">
+      <navigator 
+          url="../courseOrderDetail/courseOrderDetail?courseApplyId={{item.id}}&userid={{userInfo.id}}" class="order" wx:for="{{courseOrderList}}" wx:key="{{item.id}}" data-order-index="{{index}}">
+              <view class="h">
+                  <view class="l">订单编号：{{item.order_sn}}</view>
+                  <view class="r">{{item.order_status_text}}</view>
+              </view>
+              <view class="goods" wx:for="{{item.courseList}}" wx:key="{{gitem.id}}" wx:for-item="gitem">
+                  <view class="img">
+                      <image src="{{gitem.list_img}}"></image>
+                  </view>
+                  <view class="info">
+                      <text class="name">{{gitem.course_name}}</text>
+                  </view>    
+              </view>
+              <view class="b">
+                  <view class="l">实付：￥{{item.course_price}}</view>
+                  <view class="r">
+                  <button class="btn" data-cancellorder="{{item.id}}" catchtap="cancellCourseOrder" wx:if="{{item.handleOption.pay}}">取消订单</button>
+                      <button class="btn" data-id="{{item.courseList[0].course_id}}" catchtap="payCourseOrder" wx:if="{{item.handleOption.pay}}">去付款</button>
+                  </view>
+              </view>
+       </navigator>
+    </view>
+    
+</view>

@@ -1,0 +1,34 @@
+<view class="container">
+  <!-- {{infoDetail.content}}  -->
+  <view class='infoDetail-img'>
+    <image src='{{infoDetail.scene_pic_url}}'></image>
+  </view>
+  <view class='title'>
+    <text>{{infoDetail.title}}</text>
+  </view>
+  <view class='sub-title'>{{infoDetail.subtitle}}</view>
+  <view class='content'>{{infoDetail.content}}</view>
+  <view class="l l-collect {{ openAttr ? 'back' : ''}}" bindtap="closeAttrOrCollect">
+      <text class='line'></text>
+      <image class="icon" src="{{ collectBackImage }}"></image>
+      <text class='line'></text>
+  </view> 
+  <view class='about-info'>
+    <text class='about-title'>相关资讯</text>
+    <view class='about-list'>
+      <view class='item'>
+        <navigator url="../infoDetail/infoDetail?infoid={{item.id}}"  class="item" wx:for="{{aboutInfoList}}" wx:for-item="item">
+          <view class='info-list'>
+            <view class='info-img'>
+              <image src="{{item.scene_pic_url}}"></image>
+            </view>
+            <view class='info-des'>
+              <text class='info-title'>{{item.title}}</text>
+              <text class='info-detail'>{{item.subtitle}}</text>
+            </view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

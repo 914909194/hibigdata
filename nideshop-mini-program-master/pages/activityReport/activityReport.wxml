@@ -1,0 +1,65 @@
+<view class="container">
+  <view class="joinActivityInfo">
+     <view class="rai-image">
+       <image src="{{joinActivity.list_img}}"></image>
+     </view>
+     <view class="rai-texts">
+        <text class="jointitle">{{joinActivity.title}}</text>
+        <text class="joindt">活动时间：{{joinActivity.date}}</text>
+        <text class="joinadrs">活动地址：{{joinActivity.address}}</text>
+        <text class="joinprice">活动售价：￥{{joinActivity.price}}元</text>     
+     </view>
+     
+  </view>
+  <form class="form" bindsubmit="infoSubmit">
+     <view class="view_item">
+        <label>
+          <text>姓名</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="text" class="realname" name="realname" placeholder-class="infoInput" placeholder='输入您的姓名' value="{{userInfo.realname}}"/>
+     </view>
+
+     <view class="view_item">
+        <label>
+          <text>邮箱</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="text" class="email" name="email" placeholder-class="infoInput" placeholder="输入您的邮箱" value="{{userInfo.email}}"/>
+     </view>
+
+     <view class="view_item">
+        <label>
+          <text>手机</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="number" class="mobile" name="mobile" placeholder-class="infoInput" placeholder="输入您的手机号" maxlength='11' value="{{userInfo.mobile}}"/>
+     </view>
+
+     <view class="view_item">
+        <label>
+          <text>微信号</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="text" class="wechat" name="wechat" placeholder-class="infoInput" placeholder='输入您的微信号' value="{{userInfo.wechat}}"/>
+     </view>
+
+     <view class="view_item">
+        <label>
+          <text>公司/机构</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="text" class="company" name="company" placeholder-class="infoInput" placeholder='输入您的公司/机构' value="{{userInfo.company}}"/>
+     </view>
+
+     <view class="view_item">
+        <label>
+          <text>职称</text>    
+          <text class="necessary">(必填项)</text>    
+        </label>
+        <input type="text" class="position" name="position" placeholder-class="infoInput" placeholder='输入您的职称' value="{{userInfo.position}}"/>
+     </view>
+     <button class="joinPay" form-type="submit">提交</button>
+        
+  </form>
+</view>

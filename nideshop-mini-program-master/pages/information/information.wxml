@@ -1,0 +1,18 @@
+<view class="container">
+  <view class='info-header'>
+      <text>最新资讯</text>
+  </view>
+  <view class='infomation-content'>
+    <navigator url="../infoDetail/infoDetail?infoid={{item.id}}"  class="item" wx:for="{{infoList}}" wx:for-item="item">
+        <view class='info-list'>
+          <view class='info-img'>
+            <image src="{{item.scene_pic_url}}"></image>
+          </view>
+          <view class='info-des'>
+            <view class='info-title'>{{item.title}}</view>
+            <text class='info-detail'>{{item.subtitle}}</text>
+          </view>
+        </view>
+    </navigator>
+  </view>
+</view>

@@ -1,0 +1,50 @@
+<view class="container">
+    <view class='header'>
+  <view class="search-header">
+    <view class="search-box">
+      <input type="text" class="search" name="search" bindinput="serchKeyWords"  placeholder='一共在线{{activityCount}}个活动' bindinput ="serchKeyWords" />
+      <button class='search-btn' bindtap="search">搜索</button>
+    </view>
+   
+    </view>
+  </view>
+  <view class='menu'>
+    <view data-num="1" data-course='new' class="list-menu list-menu1 {{_num==1?'cur':''}}" bindtap="menuClick">新品</view>
+    <view data-num="2" data-course='hot' class="list-menu list-menu2 {{_num==2?'cur':''}}" bindtap="menuClick">热门</view>
+    <view data-num="3" data-course='price' class="list-menu list-menu3 by-price {{_num==3?'cur':''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="menuClick">价格</view>   
+  </view>
+    <view class="activity-list" >
+      <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;"
+    class="list" bindscrolltolower="bindDownLoad" >
+        <navigator url="../activityDetail/activityDetail?activityid={{item.id}}&paystatus={{item.pay_status}}"  class="item" wx:for="{{activeList}}" wx:key="{{index}}">
+            <view class="img-left">
+                <image src="{{item.list_img}}"></image>
+            </view>
+            <view class="txt-box">
+                <text class="name" >{{item.title}}</text>
+                <text class="dt">{{item.date}}</text>
+                <text class="adrs">{{item.address}}</text>
+                <text class="price">{{item.price}}元起</text>                 
+                <text class="desc">{{item.description}}</text>
+                <view wx:if="{{item.is_on_sale === 0}}">
+                    <button class="activity-btn" data-id="{{item.id}}">活动结束                                         </button>
+                </view>
+                <view wx:elif="{{item.is_on_sale === 1 && item.pay_status === 0}}">
+                    <button class="activity-btn" data-id="{{item.id}}">未完成报名</button>
+                </view>
+                <view wx:elif="{{item.is_on_sale === 1&&item.pay_status === 1}}">
+                    <button class="activity-btn" data-id="{{item.id}}">报名成功                                       </button>
+                </view>
+                <view wx:else>
+                    <button class="activity-btn" data-id="{{item.id}}">立即报名                                         </button>
+                </view>
+            </view>
+        </navigator>
+        <view class="loading">
+          <!-- <text wx:if="{{hidden&&!noMore}}"> 加载中...</text>  -->
+          <text wx:if="{{!hidden&&noMore}}"> 没有更多了</text>  
+        </view>
+      </scroll-view>
+      
+    </view>
+</view> 

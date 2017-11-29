@@ -1,0 +1,165 @@
+
+<!--index.wxml--> 
+<view class="container">
+  <swiper class="banner" indicator-dots="true" autoplay="true" interval="3000" duration="1000">
+    <swiper-item wx:for="{{banner}}" wx:key="{{item.id}}">
+      <!-- <navigator url="{{item.link}}"> -->
+        <image src="{{item.image_url}}" background-size="cover"></image>
+      <!-- </navigator> -->
+    </swiper-item>
+  </swiper>
+  <view class="m-menu">
+     <navigator  class="item" url="../activity/activity"  wx:key="{{item.id}}" data-menu-id="{{index}}">
+      <image src="http://ac-3yr0g9cz.clouddn.com/c031ea3cf575f885cd1c.png" background-size="cover"></image>
+      <text>活动</text>
+    </navigator>
+    <navigator  class="item" url="../catalog/catalog"  wx:key="{{item.id}}" data-menu-id="{{index}}" open-type="switchTab">
+      <image src="http://ac-3yr0g9cz.clouddn.com/4fbe8913819b017ebe1b.png" background-size="cover"></image>
+      <text>课堂</text>
+    </navigator>    
+    <navigator  class="item" url="../information/information"  wx:key="{{item.id}}" data-menu-id="{{index}}">
+      <image src="http://ac-3yr0g9cz.clouddn.com/da8716daa0ede53a9bb8.png" background-size="cover"></image>
+      <text>资讯</text>
+    </navigator>
+    <!--专栏wx:for="{{channel}}" -->
+    <navigator  class="item" url="../columnist/columnist"  wx:key="{{item.id}}" data-menu-id="{{index}}">
+      <image src="http://ac-3yr0g9cz.clouddn.com/e8070853e6c6f5627713.png" background-size="cover"></image>
+      <text>专栏</text>
+    </navigator>
+    <!--测评wx:for="{{channel}}"-->
+     <!-- <view  class="item"  wx:key="{{item.id}}" data-menu-id="{{index}}"  bindtap="openCourse">
+      <image src="http://ac-3yr0g9cz.clouddn.com/da8716daa0ede53a9bb8.png" background-size="cover"></image>
+      <text>课堂</text>
+    </view>    -->
+    <!--指数wx:for="{{channel}}"-->
+     <!--课堂wx:for="{{channel}}"-->
+    
+    <!--活动wx:for="{{channel}}"-->
+   
+  </view>
+  <!-- 前沿技术开始 -->
+  <view class="a-section a-popular">
+    <view class="h">
+      <!-- <navigator url="../brand/brand"> -->
+        <text class="txt">前沿技术</text>
+      <!-- </navigator> -->
+    </view>
+    <view class="b">
+      <view class="item" wx:for="{{technologyList}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+         <navigator url="../infoDetail/infoDetail?infoid={{item.id}}"> 
+          <image class="img" src="{{item.item_pic_url}}" background-size="cover"></image>
+          <view class="right">
+            <view class="text"> 
+              <text class="name">{{item.title}}</text>
+            </view>
+          </view>
+         </navigator> 
+      </view>
+    </view>
+  </view>
+  <!-- 前沿技术结束 -->
+  <view class="a-section a-brand">
+    <view class="h">
+      <navigator url="../activity/activity">
+        <text class="txt">热门活动</text>
+      </navigator>
+    </view>
+    <view class="b">
+      <view class="item item-1" wx:for="{{hotActivity}}" wx:key="item.id">
+         <navigator url="../activityDetail/activityDetail?activityid={{item.id}}"> 
+          <view class="wrap">
+            <image class="img" src="{{item.list_img}}" mode="aspectFill"></image>
+            <view class="mt">
+              <text class="brand">{{item.title}}</text>
+              <view class="desc">活动时间:{{item.date}}</view>
+              <view class="unit">
+                  <button class="activityBtn" wx:if='{{item.is_on_sale === 1&&item.pay_status === 1}}'>报名成功</button>
+                 <button class="activityBtn" wx:elif='{{item.is_on_sale === 1 && item.pay_status === 0}}'>未完成报名</button>
+                 <button class="activityBtn"  wx:else>活动报名</button> 
+              </view>
+            </view>
+          </view>
+         </navigator> 
+      </view>
+    </view>
+  </view>
+  
+
+   <view class="a-section a-topic" wx:if="topics.length > 0">
+    <view class="h">
+      <view>
+      <!-- <navigator url="../topic/topic" open-type="switchTab"> -->
+        <text class="txt">最新资讯</text>
+        <!-- </navigator> -->
+      </view>
+    </view>
+    <view class="b">
+      <scroll-view scroll-x="true" class="list">
+        <view class="item" wx:for="{{information}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+           <navigator url="../infoDetail/infoDetail?infoid={{item.id}}"> 
+            <image class="img" src="{{item.scene_pic_url}}" background-size="cover"></image>
+            <view class="np">
+              <text class="name">{{item.title}}</text>
+            </view>
+            <text class="desc">{{item.subtitle}}</text>
+           </navigator> 
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="a-section a-popular" wx:if="{{hotCourse.length > 0}}">
+    <view class="h">
+      <view>
+        <!-- <navigator url="../hotGoods/hotGoods"> -->
+          <text class="txt">热门课程</text>
+        <!-- </navigator> -->
+      </view>
+    </view>
+    <view class="b">
+      <view class="item" wx:for="{{hotCourse}}" wx:for-index="index" wx:for-item="item" wx:key="{{item.id}}">
+       <!-- <navigator url="../goods/goods?courseid={{iitem.id}}&userid={{userId}}"  class="item" wx:for="{{coursesList}}" wx:for-item="iitem" wx:for-index="iindex" > -->
+         <navigator url="../course/course?courseid={{item.id}}&userid={{userId}}"> 
+          <image class="img" src="{{item.img}}" background-size="cover"></image>
+          <view class="right">
+            <view class="text">
+              <text class="name">{{item.title}}</text>
+              <text class="desc">{{item.description}}</text>
+              <text class="price">￥{{item.freeprice}}</text>
+            </view>
+          </view>
+         </navigator> 
+      </view>
+    </view>
+  </view>
+
+  <view class="good-grid" wx:for="{{categoryList}}" wx:key="{{item.id}}">
+    <view class="h">
+      <view>
+        <text>{{item.name}}</text>
+      </view>
+    </view>
+    <view class="b">
+      <block wx:for="{{item.categoryCourse}}" wx:for-index="iindex" wx:for-item="iitem" wx:key="{{iitem.id}}">
+        <view class="item {{iindex % 2 == 0 ? '' : 'item-b'}}">
+           <navigator url="../course/course?courseid={{iitem.id}}&userid={{userId}}" class="a"> 
+          <view class="a">
+            <image class="img" src="{{iitem.list_img}}" background-size="cover"></image>
+            <text class="name">{{iitem.title}}</text>
+            <text class="price">￥{{iitem.freeprice}}</text>
+          </view>  
+           </navigator> 
+        </view>
+      </block>
+      <view class="item item-b item-more">
+           <navigator url="/pages/category/category?id={{item.id}}" class="more-a"> 
+          <view class="more-a">
+            <view class="txt">{{'更多'+item.name+'课程'}}</view>
+            <image class="icon" src="../../static/images/icon_go_more.png" background-size="cover"></image>
+          </view>
+           </navigator> 
+      </view>
+    </view>
+  </view>
+  
+</view>

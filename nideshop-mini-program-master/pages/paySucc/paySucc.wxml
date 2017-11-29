@@ -1,0 +1,5 @@
+<view class="container">
+   <view class="zbox">
+       <text>支付成功</text>
+   </view>
+</view>

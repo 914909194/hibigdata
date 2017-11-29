@@ -1,0 +1,26 @@
+<view class="container">
+ <form bindsubmit="formSubmit">
+  <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      <view class="fb-type">
+        <view class="type-label">{{array[index]}}</view>
+        <image class="type-icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/pickerArrow-a8b918f05f.png"></image>
+ 
+      </view>
+    </view>
+  </picker>
+  <view class="fb-body">
+    <textarea class="content" bindblur="bindTextAreaBlur"  value="{{content}}" placeholder="对我们网站、课程、服务，你还有什么建议吗？你还希望在得到什么帮助？请告诉我们..." />
+    <!-- <view class="text-count">0/500</view> -->
+  </view>
+  <view class="fb-mobile">
+    <view class="label">联系方式</view>
+    <view class="mobile-box">
+      <input class="mobile" bindinput ="tel" value="{{telvalue}}" placeholder="方便我们与你联系" />
+      <image class="clear-icon" src="http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/clear-fb-dd9d604f86.png"></image>
+    </view>
+  </view>
+
+  <button class="fb-btn"  formType="submit">提交</button>
+</form>
+</view>

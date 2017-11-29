@@ -1,0 +1,41 @@
+<view class="add-address">
+   <form bindsubmit="formSubmit">
+    <view class="add-form">
+        <!-- <view class="form-item">
+            <input class="input" bindinput="bindinputName" placeholder="昵称" value="{{address.name}}" auto-focus/>
+        </view> -->
+        <view class="form-item" wx:if="{{stadus==1}}">
+            <input class="input"  bindinput="bindinputWechat"  value="{{userinfo.wechat}}" auto-focus/>
+        </view>
+        <view class="form-item" wx:if="{{stadus==2}}">
+            <input class="input" bindinput="bindinputName"  value="{{userinfo.realname}}" auto-focus/>
+        </view>
+        <view class="form-item" wx:if="{{stadus==3}}">
+            <input class="input" bindinput="bindinputMobile" value="{{userinfo.mobile}}" />
+        </view>
+        <view class="form-item" wx:if="{{stadus==4}}">
+            <input class="input" bindinput="bindinputEmail" value="{{userinfo.email}}" />
+        </view>
+        <view class="form-item" wx:if="{{stadus==5}}">
+            <input class="input" bindinput="bindinputCompany" value="{{userinfo.company}}" />
+        </view>
+        <view class="form-item" wx:if="{{stadus==6}}">
+            <input class="input" bindinput="bindinputPosition" value="{{userinfo.position}}" />
+        </view>
+        <!-- <view class="form-item" wx:if="{{stadus==7}}">
+            <input class="input" bindinput="bindinputIntroduction" value="{{userinfo.introduction}}" />
+        </view> -->
+          <view class="form-item introduction-box " wx:if="{{stadus==7}}">
+            <textarea class="introduction"  maxlength="150" bindblur="bindinputIntroduction"  value="{{userinfo.introduction}}" placeholder="个人简介,不超过150字" />
+        </view> 
+
+        
+    </view>
+
+    <view class="btns">
+        <button class="cannel" bindtap="cancel">取消</button>
+        <button class="save" formType="submit">保存</button>
+    </view>
+
+   </form>
+</view>

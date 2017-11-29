@@ -1,0 +1,56 @@
+<view class="container">
+    <view class='info-box'>
+      
+        <view class='item header'>
+          <text  class='left'>头像</text>
+          <image src='{{userinfo.avatar}}'  class='right'></image>
+        </view>
+      
+        <view class='item nickname'>
+          <text class='left'>昵称</text>
+          <text class='right'>{{userinfo.nickname}}</text>
+        </view>
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=1" >
+        <view class='item wechat'>
+            <text class='left'>微信号</text>
+            <text class='right'>{{userinfo.wechat}}</text>
+        </view>
+      </navigator>  
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=2" >
+        <view class='item username'>
+          <text class='left'>姓名</text>
+          <text class='right'>{{userinfo.realname}}</text>
+        </view>
+      </navigator>  
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=3" >
+        <view class='item tel'>
+          <text class='left'>手机号</text>
+          <text class='right'>{{userinfo.mobile}}</text>
+        </view>
+      </navigator> 
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=4" >   
+        <view class='item email'>
+          <text class='left'>邮箱</text>
+          <text class='right'>{{userinfo.email}}</text>
+        </view>
+      </navigator>  
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=5" >   
+        <view class='item company'>
+          <text class='left'>公司名</text>
+          <text class='right'>{{userinfo.company}}</text>
+        </view>
+      </navigator>  
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=6" >   
+        <view class='item position'>
+          <text class='left'>职位</text>
+          <text class='right'>{{userinfo.position}}</text>
+        </view> 
+      </navigator>
+      <navigator url="/pages/ucenter/editInfo/editInfo?stadus=7" >   
+        <view class='item introduction'>
+          <text class='left'>自我介绍</text>
+          <text class='right'>{{userinfo.introduction}}</text>
+        </view> 
+      </navigator>    
+    </view>
+</view>

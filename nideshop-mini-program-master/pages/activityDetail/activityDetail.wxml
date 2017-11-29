@@ -1,0 +1,57 @@
+<view class="container" scroll-y="true">
+  <view wx:if="{{!openAttr}}">
+    <view class="img-act">
+      <image src="{{active.img}}"></image>
+    </view>  
+    <view class="goods-info">
+      <view class="c">
+        <text class="title">{{active.title}}</text>
+        <text class="dt">活动时间：{{active.date}}</text>
+        <text class="adrs">活动地址：{{active.address}}</text>
+        <text class="price">活动售价：￥{{active.price}}元</text>     
+        <text class="desc">从系统架构到推荐算法演进之路</text>
+      </view>
+    </view>
+ 
+    <view class="goods-attr">
+      <view class="t">活动详情：</view>
+      <view class="l">
+          <text class='content'>{{active.description}}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="bottom-btn">
+    <!-- <view class="l l-collect {{ openAttr ? 'back' : ''}}" bindtap="closeAttrOrCollect">
+      <image class="icon" src="{{ collectBackImage }}"></image>
+    </view> -->
+     <navigator url="../activityReport/activityReport?activityid={{active.id}}&username={{userInfo.username}}"> 
+      <!-- 活动结束 -->
+      <view class="c" wx:if="{{active.is_on_sale === 0}}">
+        <button class="activity-btn activity-over" data-id="{{active.id}}" disabled='true'>
+          活动结束
+        </button>
+      </view>
+      <!-- 未完成报名 -->
+      <view class="c" wx:elif="{{active.is_on_sale === 1 && paystatus === 0}}">
+        <button class="activity-btn" data-id="{{active.id}}" >
+        <!--ontap='joinActivity'  -->
+          未报名成功
+        </button>
+      </view>
+      <!-- 报名成功  -->
+      <view class="c" wx:elif="{{active.is_on_sale === 1 && paystatus === 1}}">
+        <button class="activity-btn" data-id="{{active.id}}" disabled="disabled">
+          报名成功
+        </button>
+      </view>
+      <!-- 立即报名 -->
+      <view class="c"  wx:elif="{{active.is_on_sale === 1 && !paystatus}}">
+        <button class="activity-btn" data-id="{{active.id}}" >
+          立即报名
+        </button>
+      </view>
+     </navigator> 
+   
+  </view>
+</view>

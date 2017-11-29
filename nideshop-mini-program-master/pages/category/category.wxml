@@ -1,0 +1,40 @@
+  <view class="container">
+    <view class="cate-nav">
+        <scroll-view scroll-x="true" class="cate-nav-body" style="width: 750rpx;" scroll-left="{{scrollLeft}}">
+            <view  wx:for="{{navList}}" class="item {{ id == item.id ? 'active' : ''}}" data-id="{{item.id}}" data-index="{{index}}" bindtap="switchCate">
+                <view class="name">{{item.name}}</view>
+            </view>
+        </scroll-view>
+    </view>
+ 
+    <scroll-view scroll-y="true" scroll-top="{{scrollTop}}" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad">
+    <view class='hidden'></view>
+    <view class="cate-item">
+      <view class='menu'>
+           <view data-num="1" data-course='new' class="list-menu list-menu1 {{_num==1?'cur':''}}" bindtap="menuClick">新品</view>
+         <view data-num="2" data-course='hot' class="list-menu list-menu2 {{_num==2?'cur':''}}" bindtap="menuClick">热门</view>
+         <view data-num="3" data-course='price' class="list-menu list-menu3 by-price {{_num==3?'cur':''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="menuClick">价格</view>
+         
+      </view>
+        <view class="b">
+          <navigator url="../course/course?courseid={{iitem.id}}&userid={{userId}}"  class="item" wx:for="{{coursesList}}" wx:for-item="iitem" wx:for-index="iindex" >
+                  
+                  <view class='courseImg'>
+                    <image class="img" src="{{iitem.list_img}}" background-size="cover"></image>
+                  </view>
+                  <view class='courseContent'>
+                    <text class='coursetitle '>{{iitem.title}}</text>
+                    <text class='teacher course'>授课老师：{{iitem.teachername}}</text>
+                    <text class='time course'>课时:{{iitem.duration}}</text>
+                    <text class='courseprice course'>￥{{iitem.freeprice}}</text>
+                    <view class='description'>
+                      <text class='descriptionleft'>课程详情:</text>
+                      <text class='descriptionright'>{{iitem.description}}</text>
+                    </view>     
+                  </view>         
+          </navigator>
+          <view class='noMore' wx:if="{{noMore}}">没有更多了</view>
+        </view>
+    </view>
+    </scroll-view>
+</view>  

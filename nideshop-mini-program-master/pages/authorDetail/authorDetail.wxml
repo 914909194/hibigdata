@@ -1,0 +1,40 @@
+<view class="container">
+  <view class='author-intro'>
+    <view class='author-img'>
+      <image src='{{AuthorDetail.img}}'></image>
+    </view>
+    <view class='author-des'>    
+      <text class='author-name'>会员名称：{{AuthorDetail.name}}</text>
+      <text class='sex'>性别：{{AuthorDetail.sex}}</text>        
+      <text class='author-grade'>等级：{{AuthorDetail.level}}</text>
+      <text class='author-hits'>流量：{{AuthorDetail.hits}}</text>
+      <text class='article-num'>文章数量：{{ArticleNum}}</text>
+    </view> 
+  </view>
+  <view class='author-info'>
+    <view class='article-header'>
+      <text class='article-list-title'>作者简介</text>
+    </view>
+    <text class='description'>{{AuthorDetail.description}}</text>
+  </view>
+  <view class='article-header'>
+    <text class='article-list-title'>文章列表</text>
+  </view>
+  <view class='article-list'>
+    <navigator url="../articleDetail/articleDetail?articleid={{item.id}}"  class="item"  wx:for="{{AuthorArticleList}}" wx:for-item="item">
+      <view class='article-item' >
+        <view class='article-img'>
+          <image src='{{item.img}}'></image>
+        </view>
+        <view class='article-title'>
+          <text>{{item.title}}</text>
+        </view>
+      </view>
+    </navigator>
+    <text wx:if="{{!articleCount}}" class='no-data'>暂时没有数据</text>
+    <view class='page'>
+      <text class='pre-page'>上一页</text>
+      <text class='next-page'>下一页</text> 
+    </view>
+  </view>
+</view>

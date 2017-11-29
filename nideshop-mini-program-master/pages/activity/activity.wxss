@@ -1,0 +1,165 @@
+.container{
+   background-color: #F9F9F9;
+}
+.header{
+  width:100%;
+  height:75rpx;
+  position: fixed;
+  top:0;
+  left:0;
+  z-index: 10;
+  background: #fff;
+}
+.search-box{
+  display:flex;
+  width: 88%;
+  margin:0 auto;
+}
+.search{
+  flex: 10;
+  height:58rpx;
+   border:1rpx solid #ccc; 
+   /* border-radius: 10rpx;  */
+  padding-left: 10rpx;
+}
+.search-btn{
+   flex:1; 
+  height:62rpx;
+  /* width:50rpx; */
+  line-height: 62rpx;
+  font-size: 27rpx;
+  color:#fff;
+  background: #31C27C;
+  border-radius: 0rpx;
+} 
+/* .menu{
+  display: flex;
+  margin-top: 50rpx;
+}
+.menu .menu-item{
+  flex:1;
+  height:70rpx;
+  line-height: 70rpx;
+  color:#fff;
+  text-align: center;
+  background-color: #31C27C;
+
+} */
+.menu{
+  z-index: 100;
+  position: fixed;
+  top: 70rpx;
+  left:2.2%;  
+  width:720rpx; 
+  display:flex;
+  height: 60rpx;
+  background-color: #fff;
+}
+.menu .list-menu{
+  flex:1;
+  background-color: #fff;
+  border:1rpx solid #31C27C;
+  color: #000;
+  text-align: center;
+  line-height: 60rpx;
+}
+.menu .cur{
+  /* background-color: #31C27C; */
+  color: #31C27C;
+}
+.by-price{
+    background: url(//yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/no-3127092a69.png) 155rpx center no-repeat;
+    background-size: 15rpx 21rpx;
+}
+
+.cur.asc{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/up-636b92c0a5.png) 155rpx center no-repeat;
+    background-size: 15rpx 21rpx;
+}
+
+.cur.desc{
+    background: url(http://yanxuan.nosdn.127.net/hxm/yanxuan-wap/p/20161201/style/img/icon-normal/down-95e035f3e5.png) 155rpx center no-repeat;
+    background-size: 15rpx 21rpx;
+}
+.activity-list{
+  margin-top: 125rpx;
+}
+.activity-list .item{
+    display: flex;
+    background-color: #fff; 
+    margin-top: 10rpx;
+    width:720rpx;
+    margin:15rpx auto;
+}
+
+.activity-list .item .img-left{
+    flex:1;
+     padding:15rpx 0 15rpx 0; 
+}
+
+.activity-list .item .img-left image{
+    display:block;
+    width: 220rpx;
+    height: 215rpx;
+    border-radius:10rpx; 
+}
+
+.activity-list .item .txt-box{
+   flex:3;
+  width:450rpx;
+   padding: 15rpx;  
+}
+
+.activity-list .item .line{
+  /* padding:15rpx; */
+} 
+ 
+.activity-list .item  text{
+    display:block; 
+    font-size: 25rpx;
+    color: #333;
+    margin-bottom:10rpx; 
+}
+
+.activity-list .item .s{
+    padding: 0 10rpx;
+    font-size: 40rpx;
+}
+.activity-list .item  .name{
+   font-size: 30rpx;
+   color:#000;
+   overflow: hidden;
+   text-overflow:ellipsis;
+   white-space: nowrap;
+   /* padding-right: 15rpx; */
+}
+.activity-list .item .dt{
+  font-size: 20rpx;
+  color:#666;
+}
+.activity-list .item .price{
+   color:#FE8500;
+}
+.activity-list .item .desc{
+  overflow : hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.activity-list .item .activity-btn{
+   width:150rpx;
+   height:50rpx;
+   line-height:50rpx;
+   text-align:center;
+   font-size:25rpx;
+   color:#fff;
+   margin:10rpx 0 0;
+   padding:0;
+   background:#40a6fd;
+   margin-top: 15rpx;
+}
+.loading{
+  margin-top: 20rpx;
+  text-align: center;
+}

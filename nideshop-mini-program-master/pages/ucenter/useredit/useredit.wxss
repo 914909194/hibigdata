@@ -1,0 +1,54 @@
+page{
+    height: 100%;
+    width: 100%;
+    background: #f4f4f4;
+}
+
+.container{
+  height: 100%;
+  width: 100%;
+}
+.info-box{
+  
+}
+.item{
+  width:750rpx;
+  height:80rpx;
+  background-color: #ffffff;
+  margin-bottom:10rpx;
+}
+.item text{
+  line-height: 80rpx;
+}
+.header{
+  height:120rpx;
+}
+.header text{
+  line-height: 120rpx;
+}
+.header image{
+  width:120rpx;
+  height:120rpx;
+}
+.left{
+  float: left;
+  margin-left:25rpx;
+  color:#333;
+}
+.right{
+  float:right;
+  margin-right:30rpx;
+  color:#666666;
+}
+.introduction{
+  width:750rpx;
+  height:500rpx;  
+  background-color: #ffffff;
+  margin-bottom:10rpx;
+  overflow: hidden;
+}
+.introduction .right{
+  width:750rpx;
+  padding:20rpx;
+  margin-right:0;
+}

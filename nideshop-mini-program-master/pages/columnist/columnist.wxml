@@ -1,0 +1,45 @@
+<view class="container"> 
+  <view class='article'>
+    <view class='article-header'>
+      <text>专栏文章</text>
+      <navigator url="../moreArticle/moreArticle"  class="item" >
+        <text class='more'>更多>></text>
+      </navigator>
+    </view>
+    <view class='article-content'>
+     <navigator url="../articleDetail/articleDetail?articleid={{iitem.id}}"  class="item" wx:for="{{ArticleList}}" wx:for-item="iitem">
+        <view class='article-list'>
+          <view class='article-img'>
+            <image src="{{iitem.img}}"></image>
+          </view>
+          <view class='article-des'>
+            <text class='article-title'>{{iitem.title}}</text>
+            <text class='article-detail'>{{iitem.description}}</text>
+          </view>
+        </view>
+     </navigator>
+    </view>
+  </view>
+  <view class='author'>
+    <view class='author-header'>
+      <text>专栏作者</text>
+      <navigator url="../moreAuthor/moreAuthor"  class="item" >
+        <text class='more'>更多>></text>
+      </navigator>
+    </view>
+    <view class='author-content'>
+        <navigator url="../authorDetail/authorDetail?authorid={{item.id}}"  class="item" wx:for="{{AuthorList}}" wx:for-item="item" >
+          <view class='author-list'>
+            <view class='author-img'>
+              <image src='{{item.img}}'></image>
+            </view>
+            <view class='author-des'>
+                <text class='author-name'>{{item.name}}</text>
+                <!-- <text class='article-num'>文章：12篇</text> -->
+                <text class='article-hits'>流量：{{item.hits}}次</text>
+            </view>
+          </view>
+        </navigator>
+    </view>
+  </view>
+</view>

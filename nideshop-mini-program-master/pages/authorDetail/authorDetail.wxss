@@ -1,0 +1,105 @@
+page{
+    background: #f4f4f4;
+    min-height: 100%;
+}
+
+.container{
+    background: #f4f4f4;
+    min-height: 100%;
+}
+.author-intro{
+  display: flex;
+  height: 250rpx;
+  background-color:#fff;
+}
+.author-img {
+  flex:1;
+}
+.author-des{
+  flex:2;
+}
+.author-img image{
+  width:100%;
+  height:100%;
+}
+.author-des .author-name{
+  display: block;
+  padding:10rpx;
+  font-weight: bold;
+  font-size: 35rpx;
+}
+.author-grade,.author-hits,.article-num{
+  font-size: 25rpx;
+  color:#999;
+  padding:10rpx;
+}
+.author-grade,.author-hits,.article-num,.sex{
+  font-size: 25rpx;
+  color:#999;
+  padding:10rpx;
+}
+.article-header{
+  height:50rpx;
+}
+.article-list-title{
+  color:#999;
+  display: block;
+  width:100%;
+  line-height:50rpx;
+  margin: 15rpx 15rpx 15rpx 15rpx;
+  border-left:10rpx solid skyblue;
+}
+.article-list{
+  width:100%;
+  text-align: center;
+}
+.page {
+  text-align: center;
+  
+  margin-top: 20rpx;
+}
+.page .pre-page{
+  border: 1rpx solid #999;
+  color:#999;
+}
+.page .next-page{
+  border: 1rpx solid #999;
+  margin-left: 10rpx;
+  color:#999;
+}
+ .description{
+  /*
+  width:100%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap; */
+  padding:15rpx;
+  display: block; 
+  color: #666;
+} 
+.author-info{
+  background:#fff;
+}
+.no-data{
+  color:#ccc;
+}
+.article-item{
+  display:flex;
+}
+.article-img{
+  flex:1;
+  height:150rpx;
+  padding:15rpx;
+}
+.article-img image{
+  width:100%;
+  height:100%;
+}
+.article-title{
+  flex:3;
+  padding:15rpx;
+  text-align:left;
+  
+}
+
+

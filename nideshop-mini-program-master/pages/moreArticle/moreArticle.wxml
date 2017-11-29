@@ -1,0 +1,27 @@
+<view class="container">
+  <view class='header'>
+      <view class='search'>
+        <input placeholder='请输入搜索的文章' bindinput ="serchKeyWords"></input>
+        <button bindtap="search">搜索</button>
+      </view>
+      <view class='menu'>
+           <view data-num="1" data-course='new' class="list-menu list-menu1 {{_num==1?'cur':''}}" bindtap="menuClick">最新</view>
+         <view data-num="2" data-course='hot' class="list-menu list-menu2 {{_num==2?'cur':''}}" bindtap="menuClick">热门</view>
+         <view data-num="3" data-course='hits' class="list-menu list-menu3 by-price {{_num==3?'cur':''}} {{currentSortOrder == 'asc'  ? 'asc' : 'desc'}}" bindtap="menuClick">流量</view>
+         
+      </view>
+  </view>
+  <view class='article-content'>
+    <navigator url="../articleDetail/articleDetail?articleid={{iitem.id}}"  class="item" wx:for="{{ArticleList}}" wx:for-item="iitem">
+        <view class='article-list'>
+          <view class='article-img'>
+            <image src="{{iitem.img}}"></image>
+          </view>
+          <view class='article-des'>
+            <text class='article-title'>{{iitem.title}}</text>
+            <text class='article-detail'>{{iitem.description}}</text>
+          </view>
+        </view>
+    </navigator>
+  </view>
+</view>

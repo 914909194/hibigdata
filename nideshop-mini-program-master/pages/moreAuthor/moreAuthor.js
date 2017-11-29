@@ -1,0 +1,46 @@
+var util = require('../../utils/util.js');
+var api = require('../../config/api.js');
+
+var app = getApp();
+
+Page({
+  data: {
+
+    userid: 0
+  },
+  //获取文章列表
+  getAuthorList() {
+    let that = this;
+    util.request(api.AuthorList).then(function (res) {
+      console.log(res);
+      console.log('作者列表+++++++++++++++++++++++++');
+      if (res.errno === 0) {
+
+        that.setData({
+          AuthorList: res.data
+        });
+      }
+    });
+  },
+  
+
+  onLoad: function (options) {
+    this.setData({
+      userid: app.globalData.userInfo.id,
+    });
+    this.getAuthorList();
+  },
+  onReady: function () {
+
+  },
+  onShow: function () {
+
+  },
+  onHide: function () {
+    // 页面隐藏
+
+  },
+  onUnload: function () {
+    // 页面关闭
+  },
+})
